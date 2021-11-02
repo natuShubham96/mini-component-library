@@ -9,10 +9,28 @@ const Select = ({ label, value, onChange, children }) => {
   const displayedValue = getDisplayedValue(value, children);
 
   return (
-    <select value={value} onChange={onChange}>
+    <DropDown value={value} onChange={onChange}>
       {children}
-    </select>
+    </DropDown>
   );
 };
+
+const DropDown = styled.select`
+height: 43px;
+border: none;
+background-color: ${COLORS.transparentGray15};
+border-radius: 8px;
+color: ${COLORS.gray700};
+width: max-content;
+
+&:focus {
+  border-color: ${COLORS.primary};
+}
+
+&:hover {
+color: ${COLORS.black};
+}
+
+`
 
 export default Select;
